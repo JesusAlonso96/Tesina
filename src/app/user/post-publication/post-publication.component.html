@@ -1,0 +1,53 @@
+<div class="container home-container margin-top" id="home-container">
+        <div class="row">
+            <div class="col-md-12 publications">
+                <mat-card class="" id="">
+                    <mat-card-header>
+                        <div mat-card-avatar class="example-header-image"></div>
+                        <mat-card-title>Crea una publicacion</mat-card-title>
+                        <mat-card-subtitle>Muestra a tus amigos el potencial de tu hogar</mat-card-subtitle>
+                        <span class="example-spacer"></span>
+                        <mat-icon (click)="close()" id="times" class="times">close</mat-icon>
+                    </mat-card-header>
+                    <mat-divider></mat-divider><br>
+                    <mat-card-content>
+                        <mat-form-field appearance="outline" id="publicationCard" class="full-width">
+                            <mat-label>Titulo de publicacion</mat-label>
+                            <textarea matInput placeholder="Ingresa un titulo llamativo"></textarea>
+                        </mat-form-field>
+                        <div class="data">
+                            <p>
+                                Ingresa aqui la descripcion de tu hogar
+                            </p>
+                            <mat-divider></mat-divider> <br>
+                            <p>
+                                Precio
+                            </p>
+                            <mat-divider></mat-divider> <br>
+                            <p>
+                                Ubicacion
+                            </p>
+                        </div>
+    
+                    </mat-card-content>
+                    <mat-divider></mat-divider><br>
+    
+                    <mat-card-actions>
+                        <button class="spacer" color="primary" mat-mini-fab
+                            aria-label="Example icon-button with a heart icon">
+                            <mat-icon>add_photo_alternate</mat-icon>
+                        </button>
+                        <button class="spacer" color="primary" mat-mini-fab
+                            aria-label="Example icon-button with a heart icon">
+                            <mat-icon>favorite</mat-icon>
+                        </button>
+                        <button class="spacer" color="primary" mat-mini-fab
+                            aria-label="Example icon-button with a heart icon">
+                            <mat-icon>publish</mat-icon>
+                        </button>
+                    </mat-card-actions> <br>
+    
+                </mat-card>
+            </div>
+        </div>
+    </div>

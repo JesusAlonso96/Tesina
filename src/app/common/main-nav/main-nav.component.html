@@ -1,0 +1,87 @@
+<mat-sidenav-container class="sidenav-container">
+  
+      <mat-sidenav #drawer class="sidenav" fixedInViewport="false"
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="'over'"
+      [opened]="(isHandset$ | async) === false" color="primary">
+      <ng-container *ngIf="isAuthenticated()">
+        <mat-toolbar color="primary" style="margin: 0%">
+          <div style="width:100%;">
+            <img src="https://material.angular.io/assets/img/examples/shiba1.jpg" class="profilePhoto" alt="">
+            <span class="profileName name">{{user.name}} {{user.lastName}} {{user.lastName2}}</span>
+            <button type="button" [matMenuTriggerFor]="menu" class="email" mat-icon-button>
+              <mat-icon>more_horiz</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item routerLink="/user/userProfile">
+                <mat-icon>edit</mat-icon>
+                <span>Editar perfil</span>
+              </button>
+    
+            </mat-menu>
+          </div>
+    
+        </mat-toolbar>
+        <mat-nav-list>
+          <mat-list-item>
+            <mat-icon mat-list-icon>home</mat-icon>
+            <h4 mat-line><a routerLink="/user/userHome">Inicio</a></h4>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon mat-list-icon>question_answer</mat-icon>
+            <h4 mat-line><a routerLink="/user/inbox">Mensajes</a> </h4>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon mat-list-icon>favorite</mat-icon>
+            <h4 mat-line><a routerLink="/user/wishList">Wish List</a></h4>
+          </mat-list-item>
+    
+          <mat-list-item>
+            <mat-icon mat-list-icon>post_add</mat-icon>
+            <h4 mat-line> <a routerLink="/user/post">Publicar</a> </h4>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon mat-list-icon>account_circle</mat-icon>
+            <h4 mat-line> <a routerLink="/user/{{user._id}}/userProfile">Perfil</a> </h4>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon mat-list-icon>assignment</mat-icon>
+            <h4 mat-line> <a routerLink="/user/{{user._id}}/userPosts">Mis publicaciones</a> </h4>
+          </mat-list-item>
+          <mat-list-item>
+            <button mat-button color="primary">Cambiar de cuenta</button>
+            <button mat-button (click)="logout()">Cerrar sesión</button>
+          </mat-list-item>
+        </mat-nav-list>
+      </ng-container>
+      
+    </mat-sidenav>
+ 
+  
+  <mat-sidenav-content class="principal-container">
+    <mat-toolbar color="primary">
+      <button type="button" mat-icon-button>
+        <mat-icon routerLink="home">school</mat-icon>
+      </button>
+      <span routerLink="home" class="title">Homeless</span>
+      <span class="spacer"></span>
+        <button mat-icon-button id="searchIcon">
+          <mat-icon>search</mat-icon>
+        </button>
+        <form class="form">
+          <mat-form-field id="searchInput" class="searchInput full-width">
+            <input matInput type="search" color="primary">
+          </mat-form-field>
+        </form>
+        <button mat-icon-button id="closeSearch" aria-label="Example icon-button with a heart icon">
+          <mat-icon>close</mat-icon>
+        </button>
+        <button mat-icon-button aria-label="Example icon-button with a heart icon">
+          <mat-icon>notifications</mat-icon>
+        </button>
+        <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+    </mat-toolbar>
+    <ng-content ></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>

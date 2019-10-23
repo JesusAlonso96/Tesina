@@ -1,0 +1,77 @@
+<div class="home-container" id="home-container">
+    <div class="row">
+        <div class="col-md-11 publications">
+            <div class="row">
+                <div class="col-md-12">
+                    <mat-card>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis alias quo laborum mollitia,
+                        dicta voluptatem accusantium! Minima deleniti, dolores veritatis eligendi vero, reiciendis ipsam
+                        dolorum quos veniam doloribus dolore amet.
+                    </mat-card>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-8">
+            <div class="row">
+                <div *ngFor="let data of example" class="col-md-12 card-publication">
+                    <mat-card>
+                        <mat-card-header>
+                            <div mat-card-avatar class="example-header-image"></div>
+                            <mat-card-title>{{data.name}}</mat-card-title>
+                            <mat-card-subtitle>{{data.location}}</mat-card-subtitle>
+                        </mat-card-header>
+                        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                                <ol class="carousel-indicators">
+                                  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                                  <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                                  <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                                </ol>
+                                <div class="carousel-inner">
+                                  <div class="carousel-item active">
+                                    <img mat-card-image src="{{data.image}}" class="d-block w-100" alt="...">
+                                  </div>
+                                </div>
+                                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                  <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                  <span class="sr-only">Next</span>
+                                </a>
+                              </div>
+                        <mat-card-content>
+                            <p>
+                                {{data.description}}
+                            </p>
+                            <mat-icon aria-hidden="false" class="likeSection" aria-label="Example home icon">
+                                favorite_border</mat-icon>
+                            <p class="likeSection">16 Me gusta</p>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-3">
+            <div class="row sidebar-right">
+                <mat-card class="col-md-12 publications-right">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim alias laboriosam voluptatum
+                    reprehenderit, impedit fugit, ipsa odio atque doloribus provident expedita voluptas, cum optio!
+                    Explicabo eos repellendus dolor corporis ipsum?
+                </mat-card>
+
+                <mat-card class="col-12 publications-right">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim alias laboriosam voluptatum
+                    reprehenderit, impedit fugit, ipsa odio atque doloribus provident expedita voluptas, cum optio!
+                    Explicabo eos repellendus dolor corporis ipsum?
+                </mat-card>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+

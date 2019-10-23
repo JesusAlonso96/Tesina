@@ -1,0 +1,101 @@
+<div class="container main-section">
+    <div class="row">
+        <mat-card class="col-md-12 col-sm-12 col-xs-12 image-section">
+            <img src="https://png.pngtree.com/thumb_back/fw800/back_pic/00/08/57/41562ad4a92b16a.jpg">
+            <mat-icon class="add_photo">add_a_photo</mat-icon>
+            <div class="row">
+                <div class="col-md-4 col-md-4-sm-4 col-xs-4 user-image text-left">
+                    <img src="../../../assets/images/default-user-image.png" class="rounded-circle">
+                </div>
+                <div class="name-section">
+                    <h5>{{user.name}} {{user.lastName}} {{user.lastName2}}</h5>
+                </div>
+            </div>
+        </mat-card>
+    </div>
+    <div class="row content-container ">
+        <mat-card class="col-lg-3 col-md-4 col-sm-12 col-xs-12 left-section no-border ">
+            <div class="col-md-12 col-sm-12 col-xs-12 text-left">
+                <button mat-raised-button *ngIf="!isMyOwnProfile()" id="btn-contact"
+                    class=" btn-block follow">Mensaje</button>
+                <button mat-raised-button color="primary" *ngIf="isMyOwnProfile()" id="btn-contact"
+                    class="btn-block follow">Editar
+                    perfil</button>
+            </div>
+            <div class="row user-detail-row">
+                <div class="col-md-12 col-sm-12 col-xs-12 user-detail-section2 pull-left">
+                    <div class="border"></div>
+                    <p>Publicaciones</p>
+                    <span>2</span>
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12 user-detail-section2 pull-left">
+                    <div class="border"></div>
+                    <p>Notificaciones</p>
+                    <span>4</span>
+                </div>
+            </div>
+        </mat-card>
+        <mat-card class="col-lg-8 col-md-8 col-sm-12 col-xs-12 right-section no-border justify-content-center">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-12">
+                        <mat-tab-group mat-stretch-tabs class="example-stretched-tabs ">
+                            <mat-tab label="Información personal">
+                                <ng-container *ngIf="!edit">
+                                    <div class="container">
+                                        <div class="row fields">
+                                            <div class="col-6">
+                                                <strong>Nombres</strong>
+                                            </div>
+                                            <div class="col-6">
+                                                <span class="subtitles">{{user.name}}</span>
+                                            </div>
+                                        </div>
+                                        <div class="row fields">
+                                            <div class="col-6">
+                                                <strong>Apellido paterno</strong>
+                                            </div>
+                                            <div class="col-6">
+                                                <span class="subtitles">{{user.lastName}}</span>
+                                            </div>
+                                        </div>
+                                        <div class="row fields">
+                                            <div class="col-6">
+                                                <strong>Apellido materno</strong>
+                                            </div>
+                                            <div class="col-6">
+                                                <span class="subtitles">{{user.lastName2}}</span>
+                                            </div>
+                                        </div>
+                                        <div class="row fields">
+                                            <div class="col-6">
+                                                <strong>Edad</strong>
+                                            </div>
+                                            <div class="col-6">
+                                                <span class="subtitles">22</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ng-container>
+                                <ng-container *ngIf="edit">
+                                </ng-container>
+                            </mat-tab>
+                            <mat-tab label="Contacto">
+
+                            </mat-tab>
+                            <mat-tab label="Publicaciones">
+                                <div class="container-fluid">
+                                    <!--AQUI VAN LAS VISTAS DE ALQUILERES-->
+                                    <app-rental-list [user]="user" [rentals]="user.post"></app-rental-list>
+                                </div>
+                            </mat-tab>
+                        </mat-tab-group>
+                    </div>
+                </div>
+            </div>
+
+
+        </mat-card>
+
+    </div>
+</div>
